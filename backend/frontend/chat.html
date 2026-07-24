@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Assistant - Healthcare Assistant</title>
+  <link rel="stylesheet" href="css/globals.css">
+  <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="index.html"><h1>🏥 Healthcare Assistant</h1></a>
+      </div>
+      <div class="navbar-menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="upload.html">Upload Report</a>
+        <a href="chat.html" class="active">Chat Assistant</a>
+        <a href="analytics.html">Analytics</a>
+        <div class="user-avatar">
+          <div class="avatar-circle">P</div>
+          <span>Patient Demo</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="chat-layout">
+      <!-- Left Document Sidebar -->
+      <div class="glass-panel chat-sidebar">
+        <span class="sidebar-title">Select Document</span>
+        <div id="sidebar-doc-list" class="sidebar-doc-list">
+          <div class="spinner"></div>
+        </div>
+      </div>
+
+      <!-- Right Chat Pane -->
+      <div class="glass-panel chat-workspace">
+        <div class="chat-header-pane">
+          <div>
+            <span id="chat-doc-title" class="chat-header-title">Document Q&A Assistant</span>
+            <div class="chat-header-subtitle">Ask questions about your medical values or prescribed dosages</div>
+          </div>
+        </div>
+
+        <div id="chat-messages-pane" class="chat-messages-pane">
+          <div class="empty-state">
+            <div class="spinner"></div>
+            <p>Loading document chat...</p>
+          </div>
+        </div>
+
+        <div class="chips-row">
+          <button class="chip-btn">What is my cholesterol level?</button>
+          <button class="chip-btn">Explain my glucose results</button>
+          <button class="chip-btn">What are my active medications?</button>
+          <button class="chip-btn">Are there any warning flags?</button>
+        </div>
+
+        <form id="chat-form" class="chat-input-form">
+          <input type="text" id="chat-input" class="chat-input" placeholder="Type a question about your report..." required>
+          <button type="submit" class="btn btn-primary">Send 💬</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="dist/chat.js"></script>
+</body>
+</html>

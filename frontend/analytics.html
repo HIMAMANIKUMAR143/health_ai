@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics - Healthcare Assistant</title>
+  <link rel="stylesheet" href="css/globals.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/analytics.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="index.html"><h1>🏥 Healthcare Assistant</h1></a>
+      </div>
+      <div class="navbar-menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="upload.html">Upload Report</a>
+        <a href="chat.html">Chat Assistant</a>
+        <a href="analytics.html" class="active">Analytics</a>
+        <div class="user-avatar">
+          <div class="avatar-circle">P</div>
+          <span>Patient Demo</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="analytics-layout">
+      <!-- Section 1: Health Metrics Trend Graph -->
+      <div class="glass-panel chart-section">
+        <div class="chart-header">
+          <h3>Health Parameters Progression Over Time</h3>
+          <span class="badge badge-info">Interactive Time Series</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="trends-chart"></canvas>
+        </div>
+      </div>
+
+      <!-- Section 2: Active Medicines Tracker -->
+      <div class="glass-panel" style="padding: 24px;">
+        <div class="chart-header" style="margin-bottom: 16px;">
+          <h3>Active Prescription Therapies Tracker</h3>
+        </div>
+        <div id="analytics-meds-container" class="meds-list">
+          <div class="spinner"></div>
+        </div>
+      </div>
+
+      <!-- Section 3: Report Comparison Matrix -->
+      <div class="glass-panel compare-workspace">
+        <div class="chart-header">
+          <h3>Comparative Health Matrix (Side-by-Side)</h3>
+        </div>
+        <div class="compare-selectors">
+          <select id="compare-doc1" class="compare-select"></select>
+          <span style="color:var(--text-muted); font-weight:bold;">VS</span>
+          <select id="compare-doc2" class="compare-select"></select>
+          <button type="button" id="run-compare-btn" class="btn btn-primary" style="padding: 8px 16px; font-size:0.85rem;">Compare Reports</button>
+        </div>
+        <div id="comparison-table-container">
+          <div class="spinner"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="dist/analytics.js"></script>
+</body>
+</html>

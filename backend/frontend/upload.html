@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Report - Healthcare Assistant</title>
+  <link rel="stylesheet" href="css/globals.css">
+  <link rel="stylesheet" href="css/upload.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="index.html"><h1>🏥 Healthcare Assistant</h1></a>
+      </div>
+      <div class="navbar-menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="upload.html" class="active">Upload Report</a>
+        <a href="chat.html">Chat Assistant</a>
+        <a href="analytics.html">Analytics</a>
+        <div class="user-avatar">
+          <div class="avatar-circle">P</div>
+          <span>Patient Demo</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="glass-panel upload-workspace">
+      <div class="upload-title-area">
+        <h2>Upload Health Document</h2>
+        <p>Upload a PDF, document, or image. Our AI parses and maps your health metrics instantly.</p>
+      </div>
+
+      <div id="progress-panel" class="progress-panel" style="display: none;">
+        <div class="progress-header">
+          <span id="progress-status-text">Uploading document to server...</span>
+        </div>
+        <div class="progress-track">
+          <div id="progress-bar" class="progress-bar" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <form id="upload-form" class="upload-form">
+        <div class="form-group">
+          <span class="form-label">Document File</span>
+          <input type="file" id="file-input" style="display: none;" accept=".pdf,.docx,.txt,.jpg,.jpeg,.png">
+
+          <div id="selected-file-panel" class="selected-file-panel" style="display: none;">
+            <div class="selected-file-info">
+              <span class="selected-file-icon">📄</span>
+              <div class="selected-file-details">
+                <span id="selected-file-name" class="selected-file-name">report.pdf</span>
+                <span id="selected-file-size" class="selected-file-size">240 KB</span>
+              </div>
+            </div>
+            <button type="button" id="change-file-btn" class="btn btn-secondary" style="padding:6px 12px; font-size:0.8rem;">Change File</button>
+          </div>
+
+          <div id="dropzone" class="dropzone">
+            <span class="dropzone-icon">📥</span>
+            <span class="dropzone-text">Drag & drop your file here, or <span style="color:var(--primary); text-decoration:underline;">browse</span></span>
+            <span class="dropzone-subtext">Supports PDF, DOCX, TXT, JPG, PNG (Max 50MB)</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="docType">Document Category</label>
+          <select id="docType" class="form-select">
+            <option value="lab_report">Lab Report (Blood, Urine, Lipids)</option>
+            <option value="prescription">Doctor's Prescription</option>
+            <option value="discharge_summary">Hospital Discharge Summary</option>
+            <option value="imaging_report">Imaging (X-Ray, MRI, CT Scan)</option>
+            <option value="other">Other Health Record</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="description">Notes / Description (Optional)</label>
+          <textarea id="description" class="form-textarea" placeholder="e.g. Follow-up blood test after fasting, prescribed by Dr. Miller"></textarea>
+        </div>
+
+        <div style="display: flex; gap: 16px; margin-top: 12px;">
+          <button type="submit" id="submit-btn" class="btn btn-primary" style="flex: 1;" disabled>Analyze Document</button>
+          <a href="dashboard.html" class="btn btn-secondary">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="dist/upload.js"></script>
+</body>
+</html>

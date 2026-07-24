@@ -1,0 +1,31 @@
+{
+  "name": "healthcare-assistant-frontend",
+  "version": "1.0.0",
+  "description": "AI-Powered Healthcare Assistant Frontend",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "^14.0.0",
+    "typescript": "^5.0.0",
+    "axios": "^1.6.0",
+    "zustand": "^4.4.0",
+    "@clerk/nextjs": "^4.29.0",
+    "recharts": "^2.10.0",
+    "date-fns": "^2.30.0",
+    "react-pdf": "^7.5.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0"
+  }
+}

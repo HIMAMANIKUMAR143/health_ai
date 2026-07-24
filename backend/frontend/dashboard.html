@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Healthcare Assistant</title>
+  <link rel="stylesheet" href="css/globals.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="app-container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="index.html"><h1>🏥 Healthcare Assistant</h1></a>
+      </div>
+      <div class="navbar-menu">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="upload.html">Upload Report</a>
+        <a href="chat.html">Chat Assistant</a>
+        <a href="analytics.html">Analytics</a>
+        <div class="user-avatar">
+          <div class="avatar-circle">P</div>
+          <span>Patient Demo</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="dashboard-container">
+      <!-- Stats Header -->
+      <div class="stats-grid">
+        <div class="glass-panel stat-card">
+          <span class="stat-label">Total Documents</span>
+          <span class="stat-value" id="stat-total">0</span>
+          <span class="stat-desc">Uploaded health records</span>
+        </div>
+        <div class="glass-panel stat-card">
+          <span class="stat-label" style="color:var(--danger)">Abnormal Flags</span>
+          <span class="stat-value" style="color:var(--danger)" id="stat-abnormal">0</span>
+          <span class="stat-desc">Markers out of reference range</span>
+        </div>
+        <div class="glass-panel stat-card">
+          <span class="stat-label">Active Medicines</span>
+          <span class="stat-value" id="stat-meds">0</span>
+          <span class="stat-desc">Prescribed active therapies</span>
+        </div>
+        <div class="glass-panel stat-card">
+          <span class="stat-label">AI Confidence Rating</span>
+          <span class="stat-value" style="color:var(--primary)" id="stat-confidence">94%</span>
+          <span class="stat-desc">Average extraction confidence</span>
+        </div>
+      </div>
+
+      <!-- Main Workspace -->
+      <div class="dashboard-content">
+        <!-- Left Document List Sidebar -->
+        <div class="glass-panel" style="padding: 24px;">
+          <div class="section-header">
+            <h2>Health Records</h2>
+          </div>
+          <div className="doc-list" id="doc-list-container">
+            <div class="empty-state">
+              <div class="spinner"></div>
+              <p>Loading documents...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Detailed Inspection Pane -->
+        <div class="glass-panel detail-panel">
+          <div class="detail-header">
+            <div class="detail-title">
+              <h3 id="detail-title">Select a Document</h3>
+              <p class="detail-description" id="detail-desc">Choose a document from the left sidebar to view report summaries and lab results.</p>
+            </div>
+            <div style="display: flex; gap: 12px;">
+              <a href="chat.html" class="btn btn-secondary" style="font-size:0.8rem; padding:8px 14px;">💬 Chat Assistant</a>
+              <a href="analytics.html" class="btn btn-secondary" style="font-size:0.8rem; padding:8px 14px;">📊 Analytics</a>
+            </div>
+          </div>
+
+          <div class="tab-nav">
+            <button class="tab-btn active" data-tab="summary">Insights Summary</button>
+            <button class="tab-btn" data-tab="labs">Lab Measurements</button>
+            <button class="tab-btn" data-tab="meds">Medication Details</button>
+          </div>
+
+          <div id="tab-content-area" style="min-height: 250px;">
+            <div class="empty-state">
+              <span style="font-size: 2rem;">👈</span>
+              <p>Select a document from the left list to view data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="dist/app.js"></script>
+</body>
+</html>

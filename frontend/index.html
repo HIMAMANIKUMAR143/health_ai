@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Assistant - AI-Powered Medical Analysis</title>
+  <link rel="stylesheet" href="css/globals.css">
+  <style>
+    .hero {
+      text-align: center;
+      padding: 80px 20px 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 0%, var(--primary) 50%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 650px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      width: 100%;
+      margin: 40px 0;
+    }
+    .feature-card {
+      padding: 24px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .feature-card h3 {
+      font-size: 1.1rem;
+      color: #fff;
+    }
+    .feature-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="index.html"><h1>🏥 Healthcare Assistant</h1></a>
+      </div>
+      <div class="navbar-menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="upload.html">Upload Report</a>
+        <a href="chat.html">Chat Assistant</a>
+        <a href="analytics.html">Analytics</a>
+        <div class="user-avatar">
+          <div class="avatar-circle">P</div>
+          <span>Patient Demo</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h2>AI-Powered Medical Report Analysis</h2>
+      <p>Upload your medical documents and get instant AI-powered insights using natural language.</p>
+
+      <div class="features-grid">
+        <div class="glass-panel feature-card">
+          <h3>📄 Secure Upload</h3>
+          <p>Upload PDF, DOCX, images with OCR support</p>
+        </div>
+        <div class="glass-panel feature-card">
+          <h3>🤖 AI Analysis</h3>
+          <p>Get instant summaries and explanations</p>
+        </div>
+        <div class="glass-panel feature-card">
+          <h3>📊 Analytics</h3>
+          <p>Track health trends over time</p>
+        </div>
+        <div class="glass-panel feature-card">
+          <h3>💬 Chat Assistant</h3>
+          <p>Ask questions about your medical records</p>
+        </div>
+      </div>
+
+      <div class="cta-buttons">
+        <a href="upload.html" class="btn btn-primary">Upload Report</a>
+        <a href="dashboard.html" class="btn btn-secondary">View Dashboard</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
